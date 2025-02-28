@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyApi.Data;
-using MyApi.Models;
+using MyApi.Models.Entities;
 using MyApi.Models.DTOs;
 using System.Security.Claims;
 
@@ -21,7 +21,7 @@ namespace MyApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TaskDto>>> GetTasks([FromQuery] Models.TaskStatus? status = null)
+        public async Task<ActionResult<IEnumerable<TaskDto>>> GetTasks([FromQuery] TodoTaskStatus? status = null)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -88,11 +88,11 @@ namespace MyApi.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var task = new Models.Task
+            var task = new TodoTask
             {
                 Title = createTaskDto.Title,
                 Description = createTaskDto.Description,
-                Status = Models.TaskStatus.Todo,
+                Status = TodoTaskStatus.Todo,
                 DueDate = createTaskDto.DueDate,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,

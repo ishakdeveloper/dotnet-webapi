@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using MyApi.Models.Entities;
 
 namespace MyApi.Models.DTOs
 {
@@ -21,7 +22,7 @@ namespace MyApi.Models.DTOs
 
         public string Description { get; set; }
 
-        public TaskStatus Status { get; set; }
+        public TodoTaskStatus Status { get; set; }
 
         public DateTime? DueDate { get; set; }
     }
@@ -31,7 +32,7 @@ namespace MyApi.Models.DTOs
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public TaskStatus Status { get; set; }
+        public TodoTaskStatus Status { get; set; }
         public DateTime? DueDate { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
