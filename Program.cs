@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MyApi.Data;
-using MyApi.Models;
+using MyApi.Models.Entities;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using System.Security.Cryptography;

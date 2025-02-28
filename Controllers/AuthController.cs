@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using MyApi.Models;
+using MyApi.Models.Entities;
 using MyApi.Models.DTOs;
 using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Stores;
